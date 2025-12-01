@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-luxury-black: #0B0B0B;
+  --color-luxury-charcoal: #121212;
+  --color-luxury-gold: #D4AF37;
+  --color-luxury-champagne: #E8C878;
+  --color-luxury-white: #F4F4F4;
+  --color-luxury-gray: #A1A1A1;
+  --color-luxury-border: #2A2A2A;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+  --animate-fade-in: fadeIn 1s ease-out forwards;
+  --animate-scale-in: scaleIn 1.2s ease-out forwards;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
 
+/* Custom Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .gold-gradient {
+    background: linear-gradient(135deg, #D4AF37 0%, #E8C878 50%, #D4AF37 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gold-border-gradient {
+    border-image: linear-gradient(135deg, #D4AF37 0%, #E8C878 50%, #D4AF37 100%) 1;
+  }
+
+  .hover-gold-glow {
+    transition: all 0.4s ease;
+  }
+  
+  .hover-gold-glow:hover {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+    border-color: #D4AF37;
+  }
+}
+
+/* FILM GRAIN OVERLAY */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* HIDE SCROLLBAR FOR CHROME/SAFARI/OPERA (Lenis handles it, but good fallback) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0B0B; 
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37; 
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-luxury-black);
+  color: var(--color-luxury-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none; /* Hide default cursor for custom one, but need fallback if js fails - actually better to keep default and just overlay custom or hide via class */
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto; /* Restore cursor on mobile */
+  }
 }
