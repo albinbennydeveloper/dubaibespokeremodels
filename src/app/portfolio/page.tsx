@@ -113,11 +113,7 @@ export default function PortfolioPage() {
                   <p className="text-luxury-white/60 leading-relaxed text-lg font-light">
                     {project.description}
                   </p>
-                  <div className="pt-4">
-                    <Button variant="outline" className="group">
-                      View Case Study
-                    </Button>
-                  </div>
+                
                 </div>
               </div>
             ))}
