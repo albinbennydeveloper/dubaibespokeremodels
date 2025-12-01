@@ -105,11 +105,9 @@ body {
   color: var(--color-luxury-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none; /* Hide default cursor for custom one, but need fallback if js fails - actually better to keep default and just overlay custom or hide via class */
+  cursor: auto !important; /* Force default cursor visibility */
 }
 
-@media (max-width: 768px) {
-  body {
-    cursor: auto; /* Restore cursor on mobile */
-  }
+a, button, [role="button"] {
+  cursor: pointer !important;
 }

@@ -72,10 +72,7 @@ export function Hero() {
           className="max-w-4xl"
         >
           <motion.div variants={child} className="flex items-center gap-4 mb-6">
-            <div className="h-px w-12 bg-luxury-gold" />
-            <span className="text-luxury-gold text-sm uppercase tracking-[0.3em]">
-              Est. 2025
-            </span>
+            
           </motion.div>
 
         <motion.h1

@@ -62,6 +62,12 @@ export const blogPosts: BlogPost[] = [
 
       <h3>3. Biophilic "Living" Walls</h3>
       <p>Especially popular in <strong>house renovation specialists in Dubai</strong> portfolios, integrating real plant walls and maximizing indoor-outdoor flow is crucial for combating the desert heat visually.</p>
+
+      <h3>4. Smart Home "Invisibility"</h3>
+      <p>Gone are the bulky touchpads. In 2025, automation is invisible. Voice-controlled lighting, motion-sensing climate control, and speakers hidden within the drywall are standard in luxury <strong>fit out company Dubai</strong> projects.</p>
+
+      <h3>5. The Return of Dark Wood</h3>
+      <p>Walnut and Mahogany are replacing light oak. This adds a sense of gravitas and warmth to large open-plan villas, grounding the space and providing a rich contrast to stone floors.</p>
     `
   },
   {

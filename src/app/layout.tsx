@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
-import { CustomCursor } from "@/components/ui/custom-cursor";
 import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 import { LeadModalProvider } from "@/components/ui/lead-modal-context";
 import { LeadModal } from "@/components/ui/lead-modal";
@@ -163,7 +162,6 @@ export default function RootLayout({
       >
         <LeadModalProvider>
           <SmoothScroll>
-            <CustomCursor />
             <div className="grain-overlay" />
             <FloatingWhatsApp />
             <LeadModal />
