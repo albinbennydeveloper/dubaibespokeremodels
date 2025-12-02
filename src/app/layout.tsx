@@ -5,6 +5,8 @@ import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { FloatingWhatsApp } from "@/components/ui/floating-whatsapp";
 import { LeadModalProvider } from "@/components/ui/lead-modal-context";
 import { LeadModal } from "@/components/ui/lead-modal";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -165,6 +167,8 @@ export default function RootLayout({
             <div className="grain-overlay" />
             <FloatingWhatsApp />
             <LeadModal />
+            <Analytics />
+            <SpeedInsights />
             {children}
           </SmoothScroll>
         </LeadModalProvider>
