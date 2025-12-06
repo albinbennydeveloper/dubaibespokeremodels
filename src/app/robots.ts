@@ -1,13 +1,14 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://dubaibespokeremodels.ae'
+
   return {
     rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: "/private/",
+      userAgent: '*',
+      allow: '/',
+      disallow: ['/private/', '/admin/'],
     },
-    sitemap: "https://dubaibespokeremodels.ae/sitemap.xml",
-  };
+    sitemap: `${baseUrl}/sitemap.xml`,
+  }
 }
-
