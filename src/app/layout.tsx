@@ -43,6 +43,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+    icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Dubai Bespoke Remodels",
     description: "Ultra-luxury home renovation in Dubai.",
@@ -85,6 +89,7 @@ export default function RootLayout({
         "@id": "https://dubaibespokeremodels.ae/#organization",
         "name": "Dubai Bespoke Remodels",
         "image": "https://dubaibespokeremodels.ae/images/hero-poster.jpg",
+        "logo": "https://dubaibespokeremodels.ae/icon.png",
         "url": "https://dubaibespokeremodels.ae",
         "telephone": "+971543014289",
         "email": "albinbenny.developer@gmail.com",
